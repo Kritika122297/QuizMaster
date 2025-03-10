@@ -1,16 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "./index.css";
+import { AuthProvider } from "./context/AuthContext"; // Ensure AuthProvider is wrapped
 
-
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </BrowserRouter>
 );
-
-reportWebVitals();
